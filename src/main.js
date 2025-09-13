@@ -1,3 +1,4 @@
+import "./js/mode";
 import { getdata } from "./js/request";
 import "./style.css";
 
