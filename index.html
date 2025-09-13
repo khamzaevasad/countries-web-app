@@ -110,8 +110,9 @@
       <!-- countries section -->
       <section class="align-elements">
         <div
-          class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 main-container"
-        >
+          class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 main-container my-10"
+        ></div>
+        <template id="template">
           <a
             href=""
             class="card bg-base-200 shadow-sm rounded-xl transition transform duration-300 hover:scale-105 hover:shadow-lg card-travel"
@@ -120,32 +121,32 @@
               <img
                 src="https://plus.unsplash.com/premium_photo-1670552850863-5d2f451fbac6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXpiZWtpc3RhbiUyMGZsYWd8ZW58MHx8MHx8fDA%3D"
                 alt="Shoes"
-                class="rounded-xl tour-img rounded-b-none"
+                class="rounded-xl country-img rounded-b-none min-h-[150px] min-w-[300px]"
               />
             </figure>
             <div class="card-body p-3">
               <!-- card body -->
               <div>
-                <h2 class="font-bold text-xl">Uzbekistan</h2>
+                <h2 class="font-bold text-xl country-name">Uzbekistan</h2>
               </div>
 
               <div class="flex justify-start">
                 <span class="font-semibold">Population:</span>
-                <span class="mx-2">3432500</span>
+                <span class="mx-2 country-population">3432500</span>
               </div>
 
               <div class="flex justify-start">
                 <span class="font-semibold">Region:</span>
-                <span class="mx-2">Asia</span>
+                <span class="mx-2 country-region">Asia</span>
               </div>
 
               <div class="flex justify-start">
                 <span class="font-semibold">Capital:</span>
-                <span class="mx-2">Tashkent</span>
+                <span class="mx-2 country-capital">Tashkent</span>
               </div>
             </div>
           </a>
-        </div>
+        </template>
       </section>
     </main>
     <!-- Main End -->
