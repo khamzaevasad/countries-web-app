@@ -1,4 +1,5 @@
 const containerEl = document.querySelector(".main-container");
+const detailEl = document.querySelector(".detail-card");
 
 export function updateUI(data) {
   data.forEach((country) => {
@@ -47,8 +48,97 @@ export function updateUI(data) {
 
 export function updateDetail(data) {
   console.log(data);
-  const { population, borders, capital, flags, name, region, tld } = data;
+  const {
+    population,
+    borders,
+    capital,
+    flags,
+    name,
+    region,
+    tld,
+    subregion,
+    currencies,
+    languages,
+  } = data;
 
   const officialName = Object.values(name.nativeName)[0].official;
-  console.log(officialName);
+  const currencieses = Object.values(currencies.TRY)[0];
+  const currencieses1 = Object.values(currencies.TRY)[1];
+
+  const infoHtml = `
+  
+    <figure
+            class="w-full max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] object-cover mx-auto"
+          >
+            <img class="detail-img"
+            src="${flags.svg}"
+            " alt="img" />
+          </figure>
+          <div class="card-body">
+            <div>
+              <h2 class="card-title text-2xl">${name.common}</h2>
+
+              <!-- detail info -->
+              <div class="my-2">
+                <!-- name -->
+                <span class="font-semibold">Native Name:</span>
+                <span>${officialName}</span><br />
+                <!-- population -->
+                <span class="font-semibold">Populatioin:</span>
+                <span>${population}</span><br />
+                <!-- region -->
+                <span class="font-semibold">Region:</span>
+                <span>${region}</span><br />
+                <!-- subregion -->
+                <span class="font-semibold">Sub Region:</span>
+                <span>${subregion}</span><br />
+                <!-- capital -->
+                <span class="font-semibold">Capital:</span>
+                <span>${capital}</span><br />
+                <!-- domain -->
+                <span class="font-semibold">Top Level Domain:</span>
+                <span>${tld}</span><br />
+                <!-- currencies -->
+                <span class="font-semibold">Currencies:</span>
+                <span>currencieses</span><br />
+                <!-- languages -->
+                <span class="font-semibold">Languages:</span>
+                <span>languages</span>
+              </div>
+              <!-- border countries -->
+              <h2 class="text-2xl my-4">Border countries:</h2>
+              <div
+                class="flex gap-2.5 items-center overflow-x-auto w-[290px] lg:w-[390px] scrollbar-hide"
+              >
+                <a
+                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
+                  href="#"
+                  >Tajikistan</a
+                >
+                <a
+                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
+                  href="#"
+                  >Tajikistan</a
+                >
+                <a
+                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
+                  href="#"
+                  >Tajikistan</a
+                >
+                <a
+                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
+                  href="#"
+                  >Tajikistan</a
+                >
+                <a
+                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
+                  href="#"
+                  >Tajikistan</a
+                >
+              </div>
+            </div>
+          </div>
+  
+  `;
+  detailEl.insertAdjacentHTML("beforeend", infoHtml);
 }
