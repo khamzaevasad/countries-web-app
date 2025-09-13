@@ -3,13 +3,12 @@ import { getdata } from "./js/request";
 import { updateUI } from "./js/updateUI";
 import "./style.css";
 
-let url = "all?fields=name,flags,capital";
-const template = document.getElementById("template");
-const containerEl = document.querySelector(".main-container");
+let url = "all?fields=name,capital,region,population,flags";
+// const template = document.getElementById("template");
 
 getdata(url)
   .then((data) => {
-    updateUI(data, template, containerEl);
+    updateUI(data);
   })
   .catch((error) => {
     console.log(error);
