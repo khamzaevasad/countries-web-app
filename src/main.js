@@ -1,9 +1,11 @@
 import "./js/mode";
 import { getdata } from "./js/request";
 import { updateUI } from "./js/updateUI";
+import "./js/detail";
 import "./style.css";
 
-let url = "all?fields=name,capital,region,population,flags";
+let url =
+  "https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags";
 // const template = document.getElementById("template");
 
 getdata(url)

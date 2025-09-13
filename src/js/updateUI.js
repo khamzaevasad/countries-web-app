@@ -2,17 +2,18 @@ const containerEl = document.querySelector(".main-container");
 
 export function updateUI(data) {
   data.forEach((country) => {
-    console.log(country);
     const { region, flags, name, population } = country;
 
     const cardHtml = `
           <a
-            href=""
-            class="card bg-base-200 shadow-sm rounded-xl transition transform duration-300 hover:scale-105 hover:shadow-lg card-travel"
+            href="./src/pages/detail.html?country=${name.common}"
+            class="card bg-base-200 shadow-sm rounded-xl transition transform duration-300 hover:scale-105 hover:shadow-lg"
           >
             <figure class="h-[200px] overflow-hidden rounded-xl">
               <img
                 src="${flags.svg}"
+                alt=""
+                class="w-full h-full object-cover"
               />
             </figure>
             <div class="card-body p-3">
@@ -42,4 +43,8 @@ export function updateUI(data) {
     `;
     containerEl.insertAdjacentHTML("beforeend", cardHtml);
   });
+}
+
+export function updateDetail(data) {
+  console.log(data);
 }
