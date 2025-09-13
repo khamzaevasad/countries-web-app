@@ -1,6 +1,6 @@
 const overlay = document.getElementById("overlay");
-// loaderToggler
 
+// loaderToggler
 export function loader(toggle) {
   if (toggle) {
     overlay.classList.remove("hidden");
