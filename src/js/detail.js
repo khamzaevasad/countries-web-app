@@ -1,5 +1,6 @@
 import { getdata } from "./request";
 import "../style.css";
+import "./mode";
 import { updateDetail } from "./updateUI";
 const querystring = window.location.search;
 const urlParams = new URLSearchParams(querystring);
