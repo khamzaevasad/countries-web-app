@@ -8,7 +8,7 @@ const country = urlParams.get("country");
 const countryUrl = `https://restcountries.com/v3.1/name/${country}`;
 getdata(countryUrl)
   .then((data) => {
-    updateDetail(data);
+    updateDetail(data[0]);
   })
   .catch((err) => {
     console.log(err.message);

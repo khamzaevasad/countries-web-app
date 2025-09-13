@@ -47,4 +47,8 @@ export function updateUI(data) {
 
 export function updateDetail(data) {
   console.log(data);
+  const { population, borders, capital, flags, name, region, tld } = data;
+
+  const officialName = Object.values(name.nativeName)[0].official;
+  console.log(officialName);
 }
