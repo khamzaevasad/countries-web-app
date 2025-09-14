@@ -3,6 +3,7 @@ import { getdata } from "./js/request";
 import { updateUI } from "./js/updateUI";
 import "./js/detail";
 import "./style.css";
+import "./js/action";
 
 let url =
   "https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags";
