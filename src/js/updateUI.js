@@ -7,7 +7,7 @@ export function updateUI(data) {
 
     const cardHtml = `
           <a
-            href="./src/pages/detail.html?country=${name.common}"
+            href="./src/pages/detail.html?country=/name/${name.common}"
             class="country-card card bg-base-200 shadow-sm rounded-xl transition transform duration-300 hover:scale-105 hover:shadow-lg"
           >
             <figure class="h-[200px] overflow-hidden rounded-xl">
@@ -47,7 +47,6 @@ export function updateUI(data) {
 }
 
 export function updateDetail(data) {
-  console.log(data);
   const {
     population,
     borders,
@@ -61,12 +60,12 @@ export function updateDetail(data) {
     languages,
   } = data;
 
-  const officialName = Object.values(name.nativeName)[0].official;
-  const currencieses = Object.values(currencies.TRY)[0];
-  const currencieses1 = Object.values(currencies.TRY)[1];
+  const nativeName = Object.values(name.nativeName)[0].official;
+  const currency = Object.values(currencies)[0].name;
+  const language = Object.values(languages);
 
   const infoHtml = `
-  
+
     <figure
             class="w-full max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] object-cover mx-auto"
           >
@@ -82,7 +81,7 @@ export function updateDetail(data) {
               <div class="my-2">
                 <!-- name -->
                 <span class="font-semibold">Native Name:</span>
-                <span>${officialName}</span><br />
+                <span>${nativeName}</span><br />
                 <!-- population -->
                 <span class="font-semibold">Populatioin:</span>
                 <span>${population}</span><br />
@@ -100,45 +99,34 @@ export function updateDetail(data) {
                 <span>${tld}</span><br />
                 <!-- currencies -->
                 <span class="font-semibold">Currencies:</span>
-                <span>currencieses</span><br />
+                <span>${currency}</span><br />
                 <!-- languages -->
                 <span class="font-semibold">Languages:</span>
-                <span>languages</span>
+                <span>${language}</span>
               </div>
               <!-- border countries -->
               <h2 class="text-2xl my-4">Border countries:</h2>
               <div
                 class="flex gap-2.5 items-center overflow-x-auto w-[290px] lg:w-[390px] scrollbar-hide"
               >
-                <a
+              ${
+                borders
+                  ? borders
+                      .map((item) => {
+                        return ` <a
                   class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
-                  href="#"
-                  >Tajikistan</a
-                >
-                <a
-                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
-                  href="#"
-                  >Tajikistan</a
-                >
-                <a
-                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
-                  href="#"
-                  >Tajikistan</a
-                >
-                <a
-                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
-                  href="#"
-                  >Tajikistan</a
-                >
-                <a
-                  class="btn btn-sm btn-outline btn-ghost flex-shrink-0"
-                  href="#"
-                  >Tajikistan</a
-                >
+                  href="./detail.html?country=/alpha/${item}"
+                  >${item}</a
+                >`;
+                      })
+                      .join("")
+                  : "No Borders"
+              }
+               
               </div>
             </div>
           </div>
-  
+
   `;
   detailEl.insertAdjacentHTML("beforeend", infoHtml);
 }

@@ -6,7 +6,7 @@ const querystring = window.location.search;
 const urlParams = new URLSearchParams(querystring);
 const country = urlParams.get("country");
 
-const countryUrl = `https://restcountries.com/v3.1/name/${country}`;
+const countryUrl = `https://restcountries.com/v3.1${country}`;
 getdata(countryUrl)
   .then((data) => {
     updateDetail(data[0]);
