@@ -7,7 +7,7 @@ export function updateUI(data) {
 
     const cardHtml = `
           <a
-            href="./src/pages/detail.html?country=/name/${name.common}"
+            href="detail.html?country=/name/${name.common}"
             class="country-card card bg-base-200 shadow-sm rounded-xl transition transform duration-300 hover:scale-105 hover:shadow-lg"
           >
             <figure class="h-[200px] overflow-hidden rounded-xl">
